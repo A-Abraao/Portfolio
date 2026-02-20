@@ -2,59 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
-  box-sizing: border-box;
+@layer base {
+    :root{
+    --background: hsl(222 47% 4%);
+
+    /* gradiente que define a cor da fonte do texto "Portfolio" que aparece logo no inicio do header */
+    --gradient-primary: linear-gradient(
+        135deg, 
+        hsl(217 91% 60%) 0%, 
+        hsl(263 70% 60%) 100%
+        );
+    }
 }
 
-/* 2. Remove default margin */
-*:not(dialog) {
-  margin: 0;
-}
-
-/* 3. Enable keyword animations */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    interpolate-size: allow-keywords;
-  }
-}
-
-body {
-  /* 4. Add accessible line-height */
-  line-height: 1.5;
-  /* 5. Improve text rendering */
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Inter', sans-serif;
-  
-}
-
-/* 6. Improve media defaults */
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-
-/* 7. Inherit fonts for form controls */
-input, button, textarea, select {
-  font: inherit;
-}
-
-/* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
-
-/* 9. Improve line wrapping */
-p {
-  text-wrap: pretty;
-}
-h1, h2, h3, h4, h5, h6 {
-  text-wrap: balance;
-}
-
-/*
-  10. Create a root stacking context
-*/
-#root, #__next {
-  isolation: isolate;
+@layer components {
+    .gradient-text {
+        @apply bg-clip-text text-transparent inline-block;
+        background-image: var(--gradient-primary);
+    }
 }

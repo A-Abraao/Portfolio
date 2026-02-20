@@ -2,11 +2,17 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{ts, tsx, js, jsx}"
+    "./src/**/*.{ts,tsx,js,jsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // Agora o Tailwind vai reconhecer a classe 'bg-background'
+        background: 'var(--background)',
+      },
+    },
   },
+
   plugins: [],
 }
 
