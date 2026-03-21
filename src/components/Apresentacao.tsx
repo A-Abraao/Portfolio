@@ -1,6 +1,6 @@
 import {  motion } from 'framer-motion'
 import { Button } from './ui/button'
-import { Linkedin, Github, FileText } from 'lucide-react'
+import { Linkedin, Github, FileText, ArrowDown } from 'lucide-react'
 
 
 export function Aprensentacao() {
@@ -11,7 +11,7 @@ export function Aprensentacao() {
     ]
 
     return (
-        <section className="min-h-screen flex items-center justify-center static">
+        <section className="min-h-screen flex items-center justify-center">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
                 <div className="absolute bottom-1/5 -right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '-3s' }} />
@@ -72,7 +72,8 @@ export function Aprensentacao() {
                         <Button 
                             key={index}
                             size={"lg"}
-                            className="group hover:bg-primary/90 text-primary-foreground font-medium px-8 py-5 rounded-lg"
+                            className={`group font-medium px-8 py-5 rounded-lg text-white hover:border-primary
+                            ${item.label == "Github" || item.label == "Resumo"? "bg-primary/10 hover:bg-primary/10" : "hover:bg-primary/90"}`}
                             asChild>
                             
                             <a href={item.url} target='_blank' rel='noopener noreferrer'
@@ -84,7 +85,19 @@ export function Aprensentacao() {
                     ))}
 
                 </motion.div>
+
             </div>
+            <motion.div initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 1 }}
+                        className='absolute bottom-1 left-1/2 -translate-x-1/2'
+                    >
+                        <a className='text-muted-foreground flex items-center flex-col'>
+                            <span className=' text text-sm mb-2.5'>Role para explorar mais</span>
+                            <ArrowDown className="h-5.5 w-5.5 animate-arrow-bounce"/>
+
+                        </a>
+                </motion.div>
         </section>
     )
 }

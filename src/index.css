@@ -121,9 +121,26 @@
     }
 
   }
-  .animete-darken {
+  .animate-darken {
     animation: darken 0.8s ease-in-out alternate;
 
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(-0.5);
+    }
+
+    50% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(0.5);
+    }
+  }
+  .animate-arrow-bounce {
+    animation: bounce 1s alternate infinite ease-in-out;
   }
 }
 
