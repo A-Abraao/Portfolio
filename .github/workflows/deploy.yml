@@ -2,7 +2,7 @@ name: Portfolio
 
 on:
   push:
-    branches: ["main"] # Ou "master"
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -23,7 +23,7 @@ jobs:
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # Pasta onde o Vite gera o build final
+          path: './dist'
 
   deploy:
     needs: build
