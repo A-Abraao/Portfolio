@@ -99,6 +99,10 @@
     @apply max-w-6xl mx-auto px-6 py-20 md:py-12; 
   }
   
+  .blue-text {
+    @apply text-primary text-sm tracking-wider uppercase  mb-4 block
+  }
+
   .section-titulo {
     @apply text-2xl md:text-3xl font-bold mb-4 tracking-tight;
   }
@@ -120,6 +124,12 @@
 
   .glow-effect:hover::before {
     @apply opacity-100;
+  }
+
+  .tech-bagde {
+    @apply px-3 py-1 text-sm font-medium;
+    @apply bg-primary/10 rounded-lg text-primary border border-primary/20;
+    @apply inline-flex items-center gap-2;
   }
 
 }

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { useEffect } from "react"
+import { Link } from "react-scroll/modules";
 
 export function Header() {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -15,11 +16,11 @@ export function Header() {
     }, [])
 
     const ListaOpcoes = [
-        {label:"Sobre", href:"#Sobre"},
-        {label:"Habilidades", href:"#"},
-        {label:"Projetos", href:"#"},
-        {label:"Experiência", href:"#"},
-        {label:"Contato", href:"#"},
+        {label:"Sobre", href:"Sobre"},
+        {label:"Habilidades", href:"Habilidades"},
+        {label:"Projetos", href:"Projetos"},
+        {label:"Experiência", href:"Experiência"},
+        {label:"Contato", href:"Contato"},
     ]
 
     return (
@@ -43,9 +44,13 @@ export function Header() {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}>
 
-                            <a href={item.href} className="nav-link text-sm font-medium">{item.label}
+                            <Link to={item.href}
+                                smooth={true}
+                                duration={500}
+                                containerId="body"
+                                className="nav-link text-sm font-medium cursor-pointer">{item.label}
                                 
-                            </a>
+                            </Link>
                         </motion.li>
                     ))}
                 </ul>

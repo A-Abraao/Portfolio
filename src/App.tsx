@@ -3,6 +3,7 @@ import './index.css'
 import { Header } from './components/Header'
 import { Aprensentacao } from './components/Apresentacao'
 import { Sobre } from './components/Sobre'
+import { Habilidades } from './components/Habilidades'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Aprensentacao/>
       <Sobre/>
+      <Habilidades/>
     </div>
   )
 }

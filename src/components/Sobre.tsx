@@ -35,7 +35,7 @@ export function Sobre() {
                     animate={isOnView ? {opacity: 1, y: 0} : {}}
                     transition={{duration: 0.6}}>
 
-                    <span className="text-primary text-medium text-sm tracking-wider uppercase  mb-4 block">
+                    <span className="blue-text">
                         SOBRE MIM
                     </span>
                     
@@ -68,8 +68,8 @@ export function Sobre() {
                         
                         {highlights.map((item, index) => (
                             <motion.div key={index}
-                                initial={{opacity: 0, x: 30, y:15}}
-                                animate={isOnView ? {opacity: 1,x:0 ,y:0}: {}}
+                                initial={{opacity: 0, x:0, y:15}}
+                                animate={isOnView ? {opacity: 1,y:0}: {}}
                                 transition={{duration: 0.4, delay:0.4 + index * 0.1}}
                                 className=' glass-card-hover p-6 glow-effect w-full'>
                                     
