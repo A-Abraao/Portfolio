@@ -1,10 +1,12 @@
-import {motion, useInView} from 'framer-motion';
+import { motion, useInView} from 'framer-motion';
 import { useRef } from 'react';
 import { tecnologias } from './ui/Tecnologias';
+import { useState } from 'react';
 
 export function Habilidades() {
     const ref = useRef(null);
     const isOnView = useInView(ref, {once: true, margin: '-100px'})
+    const [renderizou, setRenderizou] = useState(false)
 
     return (
         <section id='Habilidades' className='relative' ref={ref}>
@@ -25,9 +27,16 @@ export function Habilidades() {
                     {tecnologias.map((item, index) => (
                         <motion.div key={index}
                             initial={{opacity:0, y: 30}}
-                            animate={isOnView ? {opacity:1, y: 0} : {}}
-                            transition={{duration: 0.6, delay:index * 0.15}}
-                            className='glass-card-hover p-6 glow-effect w-full flex flex-col gap-5'>
+                            animate={ isOnView ? {opacity:1, y: 0 }: {}}
+                            onAnimationComplete={() => {setRenderizou(true)}}
+                            whileHover={{y:-8, 
+                                transition: {duration: 0.05, ease: "easeInOut", delay:0.1}
+                            }}
+                            transition= {{
+                                duration: renderizou ? 0 : 0.6,
+                                delay: isOnView ? index * 0.15 : 0
+                            }}
+                            className='glass-card-hover p-6 glow-effect w-full flex flex-col gap-5 up-hover'>
                                 <div>
                                     <h2 className='font-semibold text-white mb-1 text-lg'>{item.titulo}</h2>
                                     <p className='text-muted-foreground text-sm'>{item.descricao}</p>
