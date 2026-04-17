@@ -7,8 +7,8 @@ Portfolio dedicado á mostrar meus melhores projeotos e habilidades em programa�
 ## 🛠️ Tecnologia usadas
 - ⚛️ **React**
 - 💻 **TypeScript**
-- 🌐 ** NodeJS e Supabase**
-- 📚 ** Git e Github **
+- 🌐 **NodeJS e Supabase**
+- 📚 **Git e Github **
 
 
 ---
