@@ -8,7 +8,7 @@ Portfolio dedicado á mostrar meus melhores projeotos e habilidades em programa�
 - ⚛️ **React**
 - 💻 **TypeScript**
 - 🌐 **NodeJS e Supabase**
-- 📚 **Git e Github **
+- 📚 **Git e Github**
 
 
 ---
